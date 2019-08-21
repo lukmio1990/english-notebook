@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'navigation';
+@import 'home';
+@import 'footer';
+
+body {
+  font-family: $main-font;
+}
+
+// font-family: 'Montserrat', sans-serif;
