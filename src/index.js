@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 
 const app = express();
+require('./database');
 
 //set handlebars
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +22,7 @@ app.engine(
 app.set('view engine', '.hbs');
 
 //middlewares
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //routes
 app.use(require('./routes'));

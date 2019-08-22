@@ -11,12 +11,20 @@
     </a>
     </div>
     {{!-- FORM --}}
-    <form class="signin__form " action="/users/signin">
-      <input class="signin__email" type="text" name="email" placeholder="Email" autofocus>
-      <p class="signin__error">nie wpisano email</p>
+    <form class="signin__form " action="/users/signin" method="POST">
+
+      <input class="signin__email" type="text" name="email" placeholder="Email" value="{{validated.name}}">
+      {{#if errors}}
+      <p class="signin__error">{{errors.name.msg}}</p>
+      {{/if}}
+
       <input class="signin__password" type="password" name="password" placeholder="Hasło">
-      <p class="signin__error">nie wpisano hasła</p>
+      {{#if errors}}
+      <p class="signin__error">{{errors.password.msg}}</p>
+      {{/if}}
+
       <button class="signin__submit" type="submit">Zaloguj się</button>
+
     </form>
     <p class="signin__paragraph">Nie masz jeszcze konta?</p>
     <a class="signin__link" href="/users/signup">Zarejestruj się</a>
