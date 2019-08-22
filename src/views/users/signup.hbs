@@ -1,0 +1,36 @@
+<div class="home">
+  <div class="signup">
+
+    <h1 class="signup__title">Rejestracja</h1>
+    {{!-- LOGO --}}
+    <div class=" signup__logo logo">
+      <a class="logo__link" href="/">
+    <p class="logo__content">english</p>
+    <img src="/img/logo2.svg" alt="" class="logo__img">
+    <p class="logo__content">notebook</p>
+    </a>
+    </div>
+    {{!-- FORM --}}
+    <form class="signup__form " action="/users/signup">
+
+      <input class="signup__name" type="text" name="name" placeholder="Imię" autofocus>
+      <p class="signup__error">nie wpisano imienia</p>
+
+      <input class="signup__email" type="text" name="email" placeholder="Email">
+      <p class="signup__error">nie wpisano email</p>
+
+      <input class="signup__password" type="password" name="password" placeholder="Hasło">
+      <p class="signup__error">nie wpisano hasła</p>
+
+      <input class="signup__confirm-password" type="password" name="confirm-password" placeholder="Powtórz hasło">
+      {{!-- <p class="signup__error">nie wpisano hasła</p> --}}
+
+      <button class="signup__submit" type="submit">Zaloguj się</button>
+
+    </form>
+    <p class="signup__paragraph">Posiadasz już konto?</p>
+    <a class="signin__link" href="/users/signup">Zaloguj się</a>
+
+  </div>
+
+</div>

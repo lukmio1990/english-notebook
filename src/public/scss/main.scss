@@ -4,9 +4,12 @@
 @import 'navigation';
 @import 'home';
 @import 'footer';
+@import 'signin';
+@import 'signup';
 
 body {
   font-family: $main-font;
+  background-color: red;
 }
 
 // font-family: 'Montserrat', sans-serif;

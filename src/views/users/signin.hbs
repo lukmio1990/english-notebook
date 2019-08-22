@@ -1,0 +1,26 @@
+<div class="home">
+  <div class="signin">
+
+    <h1 class="signin__title">Logowanie</h1>
+    {{!-- LOGO --}}
+    <div class=" signin__logo logo">
+      <a class="logo__link" href="/">
+    <p class="logo__content">english</p>
+    <img src="/img/logo2.svg" alt="" class="logo__img">
+    <p class="logo__content">notebook</p>
+    </a>
+    </div>
+    {{!-- FORM --}}
+    <form class="signin__form " action="/users/signin">
+      <input class="signin__email" type="text" name="email" placeholder="Email" autofocus>
+      <p class="signin__error">nie wpisano email</p>
+      <input class="signin__password" type="password" name="password" placeholder="Hasło">
+      <p class="signin__error">nie wpisano hasła</p>
+      <button class="signin__submit" type="submit">Zaloguj się</button>
+    </form>
+    <p class="signin__paragraph">Nie masz jeszcze konta?</p>
+    <a class="signin__link" href="/users/signup">Zarejestruj się</a>
+
+  </div>
+
+</div>

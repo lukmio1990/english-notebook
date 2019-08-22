@@ -24,6 +24,7 @@ app.set('view engine', '.hbs');
 
 //routes
 app.use(require('./routes'));
+app.use(require('./routes/users'));
 
 //static
 app.use(express.static(path.join(__dirname, 'public')));

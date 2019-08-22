@@ -1,5 +1,56 @@
 .footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  justify-content: center;
+  align-content: center;
   background-color: $primary-bgc;
-  height: 80px;
+  min-height: 80px;
   width: 100%;
+
+  &__logo {
+    @include flex-center;
+    padding: 0;
+    // @media (max-width: 1000px) {
+    //   & {
+    //     padding: 0;
+    //   }
+    // }
+  }
+
+  &__content {
+    @include flex-center;
+  }
+
+  &__paragraph {
+    color: $primary-color;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__socials {
+    @include flex-center;
+
+    @media (max-width: 930px) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    @media (max-width: 580px) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+  }
+}
+
+.fa-github,
+.fa-linkedin {
+  font-size: 40px;
+  padding: 10px;
+  color: $primary-color;
+  transition: color 0.3s;
+}
+
+.fa-github:hover,
+.fa-linkedin:hover {
+  color: $secondary-bgc;
 }
