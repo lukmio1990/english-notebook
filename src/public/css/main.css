@@ -147,7 +147,7 @@ a {
           align-items: center;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1024px) {
   .welcome {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -160,10 +160,16 @@ a {
   height: 50vh;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1024px) {
   .welcome__img {
     height: 30vh;
     padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .welcome__title {
+    padding-top: 20px;
   }
 }
 
@@ -291,6 +297,8 @@ a {
 .signin__title {
   text-align: center;
   color: #f2f2f2;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
 }
 
 .signin__logo {

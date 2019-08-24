@@ -13,9 +13,9 @@
     {{!-- FORM --}}
     <form class="signin__form " action="/users/signin" method="POST">
 
-      <input class="signin__email" type="text" name="email" placeholder="Email" value="{{validated.name}}">
+      <input class="signin__email" type="text" name="email" placeholder="Email" value="{{validated.email}}">
       {{#if errors}}
-      <p class="signin__error">{{errors.name.msg}}</p>
+      <p class="signin__error">{{errors.email.msg}}</p>
       {{/if}}
 
       <input class="signin__password" type="password" name="password" placeholder="Hasło">

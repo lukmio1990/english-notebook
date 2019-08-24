@@ -4,7 +4,7 @@ const User = require('../models/User');
 //rules to validation
 
 exports.validate = [
-  check('name')
+  check('email')
     .isLength({ min: 1 })
     .trim()
     .withMessage('Podaj swój adres email'),

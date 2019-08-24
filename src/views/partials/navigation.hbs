@@ -8,9 +8,13 @@
   </div>
   <div class="menu">
     <ul class="menu__list">
+      {{#if user}}
+      <h1>Witaj {{user.name}}</h1>
+      <li class="menu__item"><a class="menu__link" href="/users/logout">Wyloguj się</a></li>
+      {{else}}
       <li class="menu__item"><a class="menu__link" href="/users/signin">Zaloguj się</a></li>
       <li class="menu__item"><a class="menu__link" href="/users/signup">Zarejestruj się</a></li>
-
+      {{/if}}
     </ul>
   </div>
 </div>
