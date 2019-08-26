@@ -1,5 +1,22 @@
-<form action="/notes/new-note" method="POST">
-  <input type="text" name="word">
-  <input type="text" name="translate">
-  <button type="submit">Dodaj</button>
-</form>
+<div class="home">
+  <div class="newNote">
+    <h3 class="newNote__title">Dodaj fiszkę</h3>
+
+    <form class="newNote__form" action="/notes/new-note" method="POST">
+      <textarea class="newNote__word" name="word" cols="30" rows="4"
+        placeholder="słówko/zdanie">{{validated.word}}</textarea>
+
+      {{#if errors}}
+      <p class="newNote__error">{{errors.word.msg}}</p>
+      {{/if}}
+
+      <textarea class="newNote__translate" name="translate" cols="30" rows="4"
+        placeholder="tłumaczenie">{{validated.translate}}</textarea>
+      {{#if errors}}
+      <p class="newNote__error">{{errors.translate.msg}}</p>
+      {{/if}}
+      <button class="newNote__submit" type="submit">Dodaj</button>
+    </form>
+
+  </div>
+</div>

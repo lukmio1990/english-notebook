@@ -1,3 +1,24 @@
-<div class="home">
-  <h1>Wszytskie notatki</h1>
+<div class="notes-wrap">
+  <h1 class="notes-wrap__title"> Fiszki</h1>
+  {{#if notes}}
+  <div class="notes">
+    {{#each notes}}
+    <div class="note">
+      <h3 class="note__word">{{word}}</h3>
+      <p class="note__translate">{{translate}}</p>
+      <div class="note__options">
+        <i class="fas fa-edit"></i>
+        <i class="fas fa-trash-alt"></i>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+
+    <div class="notes-empty">
+      <h3 class="notes-empty__title">Nie masz żadnych notatek</h3>
+      <a class="notes-empty__link" href="/notes/add">Dodaj pierwszą notatkę</a>
+    </div>
+
+    {{/if}}
+  </div>
 </div>

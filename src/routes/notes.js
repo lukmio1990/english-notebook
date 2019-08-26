@@ -5,34 +5,25 @@ const Note = require('../models/Note');
 
 const { isAuthenticated } = require('../helpers/auth');
 
-// router.get('/notes/add', isAuthenticated, (req, res) => {
-//   res.render('notes/new-note');
-// });
+const NoteController = require('../controllers/NoteController');
 
-// router.post('/notes/new-note', isAuthenticated, async (req, res) => {
-//   const { word, translate } = req.body;
-//   const errors = [];
-//   if (!word) {
-//     errors.push({ text: 'Podaj tytuł notatki' });
-//   }
+router.get('/notes/add', isAuthenticated, (req, res) => {
+  res.render('notes/new-note');
+});
 
-//   if (!translate) {
-//     errors.push({ text: 'Podaj treść notatki' });
-//   }
-
-//   if (errors.length > 0) {
-//     res.render('notes/new-note', {
-//       errors,
-//       word,
-//       translate
-//     });
-//   } else {
-//     const newNote = new Note({ word, translate });
-//     newNote.user = req.user.id;
-//     await newNote.save();
-//     res.redirect('/notes');
-//   }
-// });
+router.post(
+  '/notes/new-note',
+  NoteController.validate,
+  NoteController.checkValidation,
+  isAuthenticated,
+  async (req, res) => {
+    const { word, translate } = req.body;
+    const newNote = new Note({ word, translate });
+    newNote.user = req.user.id;
+    await newNote.save();
+    res.redirect('/notes');
+  }
+);
 
 router.get('/notes', isAuthenticated, async (req, res) => {
   const notes = await Note.find({ user: req.user.id }).sort({ date: 'desc' });
