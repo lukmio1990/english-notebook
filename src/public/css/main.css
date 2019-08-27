@@ -93,10 +93,6 @@ a {
   padding-right: 50px;
 }
 
-.menu__item:nth-child(1) {
-  margin-right: 10px;
-}
-
 .menu__welcome {
   font-size: 15px;
   font-weight: normal;
@@ -126,6 +122,48 @@ a {
 .menu__link:hover {
   background-color: #f2f2f2;
   color: #1da1f2;
+}
+
+.nav {
+  border: 1px solid #1da1f2;
+  border-radius: 100px;
+}
+
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100px;
+  padding: 15px 12px;
+  color: #f2f2f2;
+  font-weight: bold;
+  -webkit-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav__link:hover {
+  background-color: #f2f2f2;
+  color: #1da1f2;
+}
+
+.nav__label {
+  padding-left: 5px;
+}
+
+.nav__icon {
+  font-size: 25px;
 }
 
 .home {
@@ -503,8 +541,8 @@ a {
 .notes {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(17rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  -ms-grid-columns: (minmax(17rem, 25rem))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(17rem, 25rem));
   grid-gap: 10px 10px;
   padding: 20px;
 }
@@ -549,6 +587,12 @@ a {
   padding: 5px;
 }
 
+.note__btn-edit, .note__btn-delete {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 .note__options {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -569,6 +613,7 @@ a {
   padding: 10px;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  background-color: transparent;
 }
 
 .note__options .fa-edit:hover {

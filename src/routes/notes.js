@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
 const Note = require('../models/Note');
-
 const { isAuthenticated } = require('../helpers/auth');
-
 const NoteController = require('../controllers/NoteController');
 
 router.get('/notes/add', isAuthenticated, (req, res) => {
@@ -41,9 +38,9 @@ router.get('/notes', isAuthenticated, async (req, res) => {
 //   res.redirect('/notes');
 // });
 
-// router.delete('/notes/delete/:id', isAuthenticated, async (req, res) => {
-//   await Note.findByIdAndDelete(req.params.id);
-//   res.redirect('/notes');
-// });
+router.delete('/notes/delete/:id', isAuthenticated, async (req, res) => {
+  await Note.findByIdAndDelete(req.params.id);
+  res.redirect('/notes');
+});
 
 module.exports = router;

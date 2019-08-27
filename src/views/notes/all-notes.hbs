@@ -7,16 +7,24 @@
       <h3 class="note__word">{{word}}</h3>
       <p class="note__translate">{{translate}}</p>
       <div class="note__options">
-        <i class="fas fa-edit"></i>
-        <i class="fas fa-trash-alt"></i>
+        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="note__btn-edit" type="submit"><i class="fas fa-edit"></i> </button>
+        </form>
+
+        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="note__btn-delete" type="submit"><i class="fas fa-trash-alt"></i> </button>
+        </form>
+
       </div>
     </div>
     {{/each}}
     {{else}}
 
     <div class="notes-empty">
-      <h3 class="notes-empty__title">Nie masz żadnych notatek</h3>
-      <a class="notes-empty__link" href="/notes/add">Dodaj pierwszą notatkę</a>
+      <h3 class="notes-empty__title">Nie masz żadnych słówek</h3>
+      <a class="notes-empty__link" href="/notes/add">Dodaj pierwsze słówko lub zdanie</a>
     </div>
 
     {{/if}}

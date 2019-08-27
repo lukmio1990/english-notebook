@@ -1,4 +1,5 @@
 <div class="navi">
+
   <div class="logo">
     <a class="logo__link" href="/">
     <p class="logo__content">english</p>
@@ -6,15 +7,54 @@
     <p class="logo__content">notebook</p>
     </a>
   </div>
+
   <div class="menu">
+
+    {{#if user}}
+
+    <nav class="nav">
+      <ul class="nav__list">
+
+        <li class="nav__item">
+          <a class="nav__link" href="/">
+              <i class="fas fa-home nav__icon"></i>
+              <span class="nav__label">Home</span>
+         </a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link" href="">
+              <i class="far fa-sticky-note nav__icon"></i>
+              <span class="nav__label">Dodaj notatki</span>
+            </a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link" href="/notes/add">
+              <i class="fas fa-plus nav__icon"></i>
+              <span class="nav__label" >Dodaj słówko</span>
+            </a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link" href="/notes">
+              <i class="fas fa-book-open nav__icon"></i>
+              <span class="nav__label">Twoje słówka</span>
+            </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <h1 class="menu__welcome">Witaj {{user.name}}</h1>
     <ul class="menu__list">
-      {{#if user}}
-
-      <li class="menu__item"><a class="menu__link" href="/notes/add">Nowe słówko</a></li>
-      <h1 class="menu__welcome">Witaj {{user.name}}</h1>
       <li class="menu__item"><a class="menu__link" href="/users/logout">Wyloguj się</a></li>
+    </ul>
 
-      {{else}}
+
+    {{else}}
+    <ul class="menu__list">
       <li class="menu__item"><a class="menu__link" href="/users/signin">Zaloguj się</a></li>
       <li class="menu__item"><a class="menu__link" href="/users/signup">Zarejestruj się</a></li>
       {{/if}}

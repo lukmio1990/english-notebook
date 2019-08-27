@@ -5,6 +5,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const passport = require('passport');
+const methodOverride = require('method-override');
 
 const app = express();
 require('./database');
@@ -25,6 +26,7 @@ app.set('view engine', '.hbs');
 
 //middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 app.use(
   session({
     secret: 'mysecretapp',
