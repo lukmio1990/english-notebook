@@ -45,8 +45,10 @@
   &__options {
     @include flex-center;
     padding: 5px;
+
     & .fa-edit,
     & .fa-trash-alt {
+      color: black;
       font-size: 25px;
       cursor: pointer;
       padding: 10px;

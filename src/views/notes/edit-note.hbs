@@ -1,0 +1,24 @@
+<div class="home">
+  <div class="newNote">
+    <h3 class="newNote__title">Zmień</h3>
+
+    <form class="newNote__form" action="/notes/edit-note/{{note._id}}?_method=PUT " method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <textarea class="newNote__word" name="word" cols="30" rows="4"
+        placeholder="słówko/zdanie">{{note.word}}</textarea>
+      {{#if errors}}
+      <p class="newNote__error">{{errors.word.msg}}</p>
+      {{/if}}
+
+
+      <textarea class="newNote__translate" name="translate" cols="30" rows="4"
+        placeholder="tłumaczenie">{{note.translate}}</textarea>
+      {{#if errors}}
+      <p class="newNote__error">{{errors.translate.msg}}</p>
+      {{/if}}
+
+      <button class="newNote__submit" type="submit">Zatwierdź zmiany</button>
+    </form>
+
+  </div>
+</div>

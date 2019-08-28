@@ -27,16 +27,16 @@ router.get('/notes', isAuthenticated, async (req, res) => {
   res.render('notes/all-notes', { notes });
 });
 
-// router.get('/notes/edit/:id', isAuthenticated, async (req, res) => {
-//   const note = await Note.findById(req.params.id);
-//   res.render('notes/edit-note', { note });
-// });
+router.get('/notes/edit/:id', isAuthenticated, async (req, res) => {
+  const note = await Note.findById(req.params.id);
+  res.render('notes/edit-note', { note });
+});
 
-// router.put('/notes/edit-note/:id', isAuthenticated, async (req, res) => {
-//   const { title, description } = req.body;
-//   await Note.findByIdAndUpdate(req.params.id, { title, description });
-//   res.redirect('/notes');
-// });
+router.put('/notes/edit-note/:id', isAuthenticated, async (req, res) => {
+  const { word, translate } = req.body;
+  await Note.findByIdAndUpdate(req.params.id, { word, translate });
+  res.redirect('/notes');
+});
 
 router.delete('/notes/delete/:id', isAuthenticated, async (req, res) => {
   await Note.findByIdAndDelete(req.params.id);

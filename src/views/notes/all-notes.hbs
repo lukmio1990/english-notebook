@@ -7,10 +7,7 @@
       <h3 class="note__word">{{word}}</h3>
       <p class="note__translate">{{translate}}</p>
       <div class="note__options">
-        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <button class="note__btn-edit" type="submit"><i class="fas fa-edit"></i> </button>
-        </form>
+        <a class="note__btn-edit" href="/notes/edit/{{id}}"><i class="fas fa-edit"></i></a>
 
         <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
           <input type="hidden" name="_method" value="DELETE">
