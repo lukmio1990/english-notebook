@@ -12,6 +12,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 25rem));
   grid-gap: 10px 10px;
+  justify-content: center;
   padding: 20px;
 }
 

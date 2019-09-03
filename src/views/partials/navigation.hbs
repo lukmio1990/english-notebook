@@ -51,14 +51,14 @@
 
     <h1 class="menu__welcome">Witaj {{user.name}}</h1>
     <ul class="menu__list">
-      <li class="menu__item"><a class="menu__link" href="/users/logout">Wyloguj się</a></li>
+      <li class="menu__item"><a class="menu__link primaryBtn" href="/users/logout">Wyloguj się</a></li>
     </ul>
 
 
     {{else}}
     <ul class="menu__list">
-      <li class="menu__item"><a class="menu__link" href="/users/signin">Zaloguj się</a></li>
-      <li class="menu__item"><a class="menu__link" href="/users/signup">Zarejestruj się</a></li>
+      <li class="menu__item"><a class="menu__link primaryBtn" href="/users/signin">Zaloguj się</a></li>
+      <li class="menu__item"><a class="menu__link primaryBtn " href="/users/signup">Zarejestruj się</a></li>
       {{/if}}
     </ul>
   </div>
@@ -87,10 +87,10 @@
   </div>
 
   <div class="sidebar__menu">
-    <h1 class="sidebar__welcome">Witaj {{user.name}}</h1>
+
 
     {{#if user}}
-
+    <h1 class="sidebar__welcome">Witaj {{user.name}}</h1>
     <nav class="sidebar-nav">
       <ul class="sidebar-nav__list">
 
@@ -136,11 +136,11 @@
 
     <ul class="sidebar__list">
       <li class="sidebar__item">
-        <a class="sidebar__link" href="/users/signin">Zaloguj się </a>
+        <a class="sidebar__link primaryBtn" href="/users/signin">Zaloguj się </a>
       </li>
 
       <li class="sidebar__item">
-        <a class="sidebar__link" href="/users/signup">Zarejestruj się</a>
+        <a class="sidebar__link primaryBtn" href="/users/signup">Zarejestruj się</a>
       </li>
     </ul>
 

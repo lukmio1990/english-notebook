@@ -54,22 +54,10 @@
   }
 
   &__submit {
-    @include flex-center;
     background-color: transparent;
-    border: 1px solid $secondary-bgc;
-    border-radius: 100px;
     padding: 12px 10px;
-    color: $primary-color;
-    font-weight: bold;
-    transition: color 0.3s, background-color 0.3s;
     font-size: 22px;
     margin-top: 20px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $primary-color;
-      color: $secondary-bgc;
-    }
   }
 
   &__paragraph {

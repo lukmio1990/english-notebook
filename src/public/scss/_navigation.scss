@@ -64,20 +64,6 @@
   }
 
   &__link {
-    @include flex-center;
-
-    min-width: 140px;
-    border: 1px solid $secondary-bgc;
-    border-radius: 100px;
-    padding: 15px 12px;
-    color: $primary-color;
-    font-weight: bold;
-    transition: color 0.3s, background-color 0.3s;
-
-    &:hover {
-      background-color: $primary-color;
-      color: $secondary-bgc;
-    }
   }
 }
 
@@ -212,21 +198,7 @@
   }
 
   &__link {
-    @include flex-center;
-
-    min-width: 140px;
-    border: 1px solid $secondary-bgc;
-    border-radius: 100px;
-    padding: 15px 12px;
-    color: $primary-color;
-    font-weight: bold;
-    transition: color 0.3s, background-color 0.3s;
     margin-top: 15px;
-
-    &:hover {
-      background-color: $primary-color;
-      color: $secondary-bgc;
-    }
   }
 
   &--active {

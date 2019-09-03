@@ -36,21 +36,10 @@
   }
 
   &__submit {
-    @include flex-center;
     background-color: transparent;
-    border: 1px solid $secondary-bgc;
-    border-radius: 100px;
     padding: 12px 35px;
-    color: $primary-color;
-    transition: color 0.3s, background-color 0.3s;
     font-size: 22px;
     margin-top: 20px;
-    cursor: pointer;
     width: 100%;
-
-    &:hover {
-      background-color: $primary-color;
-      color: $secondary-bgc;
-    }
   }
 }

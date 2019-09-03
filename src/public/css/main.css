@@ -13,6 +13,32 @@ a {
   text-decoration: none;
 }
 
+.primaryBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 140px;
+  border: 1px solid #1da1f2;
+  border-radius: 100px;
+  padding: 15px 12px;
+  color: #f2f2f2;
+  font-weight: bold;
+  -webkit-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.primaryBtn:hover {
+  background-color: #f2f2f2;
+  color: #1da1f2;
+}
+
 .navi {
   display: -ms-grid;
   display: grid;
@@ -112,31 +138,6 @@ a {
   font-weight: normal;
   color: #f2f2f2;
   padding: 0 10px 0 20px;
-}
-
-.menu__link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-width: 140px;
-  border: 1px solid #1da1f2;
-  border-radius: 100px;
-  padding: 15px 12px;
-  color: #f2f2f2;
-  font-weight: bold;
-  -webkit-transition: color 0.3s, background-color 0.3s;
-  transition: color 0.3s, background-color 0.3s;
-}
-
-.menu__link:hover {
-  background-color: #f2f2f2;
-  color: #1da1f2;
 }
 
 .nav {
@@ -302,29 +303,7 @@ a {
 }
 
 .sidebar__link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-width: 140px;
-  border: 1px solid #1da1f2;
-  border-radius: 100px;
-  padding: 15px 12px;
-  color: #f2f2f2;
-  font-weight: bold;
-  -webkit-transition: color 0.3s, background-color 0.3s;
-  transition: color 0.3s, background-color 0.3s;
   margin-top: 15px;
-}
-
-.sidebar__link:hover {
-  background-color: #f2f2f2;
-  color: #1da1f2;
 }
 
 .sidebar--active {
@@ -630,31 +609,10 @@ a {
 }
 
 .signin__submit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: transparent;
-  border: 1px solid #1da1f2;
-  border-radius: 100px;
   padding: 12px 10px;
-  color: #f2f2f2;
-  font-weight: bold;
-  -webkit-transition: color 0.3s, background-color 0.3s;
-  transition: color 0.3s, background-color 0.3s;
   font-size: 22px;
   margin-top: 20px;
-  cursor: pointer;
-}
-
-.signin__submit:hover {
-  background-color: #f2f2f2;
-  color: #1da1f2;
 }
 
 .signin__paragraph {
@@ -737,31 +695,10 @@ a {
 }
 
 .signup__submit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: transparent;
-  border: 1px solid #1da1f2;
-  border-radius: 100px;
   padding: 12px 10px;
-  color: #f2f2f2;
-  font-weight: bold;
-  -webkit-transition: color 0.3s, background-color 0.3s;
-  transition: color 0.3s, background-color 0.3s;
   font-size: 22px;
   margin-top: 20px;
-  cursor: pointer;
-}
-
-.signup__submit:hover {
-  background-color: #f2f2f2;
-  color: #1da1f2;
 }
 
 .signup__paragraph {
@@ -790,6 +727,9 @@ a {
   -ms-grid-columns: (minmax(17rem, 25rem))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(17rem, 25rem));
   grid-gap: 10px 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 20px;
 }
 
@@ -1028,31 +968,11 @@ a {
 }
 
 .newNote__submit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: transparent;
-  border: 1px solid #1da1f2;
-  border-radius: 100px;
   padding: 12px 35px;
-  color: #f2f2f2;
-  -webkit-transition: color 0.3s, background-color 0.3s;
-  transition: color 0.3s, background-color 0.3s;
   font-size: 22px;
   margin-top: 20px;
-  cursor: pointer;
   width: 100%;
-}
-
-.newNote__submit:hover {
-  background-color: #f2f2f2;
-  color: #1da1f2;
 }
 
 .newRule {
@@ -1105,31 +1025,11 @@ a {
 }
 
 .newRule__submit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: transparent;
-  border: 1px solid #1da1f2;
-  border-radius: 100px;
   padding: 12px 35px;
-  color: #f2f2f2;
-  -webkit-transition: color 0.3s, background-color 0.3s;
-  transition: color 0.3s, background-color 0.3s;
   font-size: 22px;
   margin-top: 20px;
-  cursor: pointer;
   width: 100%;
-}
-
-.newRule__submit:hover {
-  background-color: #f2f2f2;
-  color: #1da1f2;
 }
 
 .all-rules-wrap {
@@ -1156,6 +1056,9 @@ a {
   -ms-grid-columns: (minmax(17rem, 25rem))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(17rem, 25rem));
   grid-gap: 10px 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 20px;
 }
 
