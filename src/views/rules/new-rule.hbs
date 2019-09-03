@@ -1,1 +1,22 @@
-<h1>Reguły</h1>
+<div class="home">
+  <div class="newRule">
+    <h3 class="newRule__title">Dodaj notatkę</h3>
+
+    <form class="newRule__form" action="/rules/new-rule" method="POST">
+      <input type="text" name="title" class="newRule__formTitle" placeholder="Tytuł notatki"
+        value="{{validated.title}}">
+
+      {{#if errors}}
+      <p class="newRule__error">{{errors.title.msg}}</p>
+      {{/if}}
+
+      <textarea class="newRule__rule" name="rule" cols="40" rows="20"
+        placeholder="treść notatki">{{validated.rule}}</textarea>
+      {{#if errors}}
+      <p class="newRule__error">{{errors.rule.msg}}</p>
+      {{/if}}
+      <button class="newRule__submit" type="submit">Dodaj</button>
+    </form>
+
+  </div>
+</div>

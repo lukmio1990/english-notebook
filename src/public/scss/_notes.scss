@@ -17,6 +17,7 @@
 
 .note {
   display: grid;
+  position: relative;
   grid-template-rows: 1fr 1fr 40px;
   color: $primary-color;
   background-color: #35459e;
@@ -42,8 +43,28 @@
     outline: none;
   }
 
+  &__cog {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  & .fa-cog {
+    font-size: 25px;
+    transition: color 0.2s;
+    &:hover {
+      color: white;
+    }
+  }
+
   &__options {
     @include flex-center;
+    position: relative;
+
     padding: 5px;
 
     & .fa-edit,
@@ -63,6 +84,34 @@
     & .fa-trash-alt:hover {
       color: red;
     }
+
+    & .rating {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+
+      &__icon {
+        padding-right: 5px;
+      }
+
+      .fa-thumbs-up {
+        color: lightgreen;
+      }
+
+      .fa-thumbs-down {
+        color: red;
+      }
+    }
+  }
+}
+
+.options__btn {
+  @include flex-center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  &--active {
+    opacity: 1;
   }
 }
 

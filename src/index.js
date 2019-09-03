@@ -19,7 +19,17 @@ app.engine(
     defaultLayout: 'main.hbs',
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
-    extname: '.hbs'
+    extname: '.hbs',
+    helpers: {
+      rating: function(correct, uncorrect) {
+        const number = correct + uncorrect;
+        if (number === 0) {
+          return 0;
+        } else {
+          return (correct / number) * 100;
+        }
+      }
+    }
   })
 );
 app.set('view engine', '.hbs');

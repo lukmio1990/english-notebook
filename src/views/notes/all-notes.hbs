@@ -1,27 +1,42 @@
 <div class="notes-wrap">
-  <h1 class="notes-wrap__title"> Fiszki</h1>
+  <h1 class="notes-wrap__title"> Fiszki </h1>
   {{#if notes}}
   <div class="notes">
     {{#each notes}}
+
     <div class="note">
+
       <h3 class="note__word">{{word}}</h3>
       <p class="note__translate">{{translate}}</p>
+
       <div class="note__options">
-        <a class="note__btn-edit" href="/notes/edit/{{id}}"><i class="fas fa-edit"></i></a>
 
-        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <button class="note__btn-delete" type="submit"><i class="fas fa-trash-alt"></i> </button>
-        </form>
+        <div class="options__btn">
+          <a class="note__btn-edit" href="/notes/edit/{{id}}"><i class="fas fa-edit"></i></a>
 
+          <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="note__btn-delete" type="submit"><i class="fas fa-trash-alt"></i> </button>
+          </form>
+        </div>
+
+        <div class="rating">
+          {{!-- <i class="fas fa-thumbs-up rating__icon"></i> --}}
+          <i class="fas fa-thumbs-down rating__icon"></i>
+          <p class="rating__content">{{rating correct uncorrect}}%</p>
+
+        </div>
+        <button class="note__cog"><i class="fas fa-cog"></i></button>
       </div>
     </div>
+
     {{/each}}
     {{else}}
 
     <div class="notes-empty">
       <h3 class="notes-empty__title">Nie masz żadnych słówek</h3>
       <a class="notes-empty__link" href="/notes/add">Dodaj pierwsze słówko lub zdanie</a>
+
     </div>
 
     {{/if}}

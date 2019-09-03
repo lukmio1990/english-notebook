@@ -16,16 +16,16 @@
       <ul class="nav__list">
 
         <li class="nav__item">
-          <a class="nav__link" href="/">
-              <i class="fas fa-home nav__icon"></i>
-              <span class="nav__label">Home</span>
+          <a class="nav__link" href="/rules">
+              <i class="fas fa-book-open nav__icon"></i>
+              <span class="nav__label">Twoje notatki</span>
          </a>
         </li>
 
         <li class="nav__item">
           <a class="nav__link" href="/rules/add">
               <i class="far fa-sticky-note nav__icon"></i>
-              <span class="nav__label">Dodaj notatki</span>
+              <span class="nav__label">Dodaj notatkę</span>
             </a>
         </li>
 
@@ -38,12 +38,14 @@
 
         <li class="nav__item">
           <a class="nav__link" href="/notes">
-              <i class="fas fa-book-open nav__icon"></i>
+              <i class="fas fa-file-word nav__icon"></i>
               <span class="nav__label">Twoje słówka</span>
             </a>
         </li>
 
       </ul>
+
+
 
     </nav>
 
@@ -60,4 +62,90 @@
       {{/if}}
     </ul>
   </div>
+
+
+
+  {{!-- HAMBURGER ICON --}}
+  <button class="hamburger">
+    <span class="hamburger__box">
+    <span class="hamburger__inner"></span>
+    </span>
+  </button>
+
+
+
+</div>
+
+{{!-- SIDEBAR --}}
+<div class="sidebar">
+  <div class="logo sidebar__logo">
+    <a class="logo__link" href="/">
+    <p class="logo__content">english</p>
+    <img src="/img/logo2.svg" alt="" class="logo__img">
+    <p class="logo__content">notebook</p>
+    </a>
+  </div>
+
+  <div class="sidebar__menu">
+    <h1 class="sidebar__welcome">Witaj {{user.name}}</h1>
+
+    {{#if user}}
+
+    <nav class="sidebar-nav">
+      <ul class="sidebar-nav__list">
+
+        <li class="sidebar-nav__item">
+          <a class="sidebar-nav__link" href="/rules">
+              <i class="fas fa-book-open sidebar-nav__icon"></i>
+              <span class="sidebar-nav__label">Twoje notatki</span>
+         </a>
+        </li>
+
+        <li class="sidebar-nav__item">
+          <a class="sidebar-nav__link" href="/rules/add">
+              <i class="far fa-sticky-note sidebar-nav__icon"></i>
+              <span class="sidebar-nav__label">Dodaj notatkę</span>
+            </a>
+        </li>
+
+        <li class="sidebar-nav__item">
+          <a class="sidebar-nav__link" href="/notes/add">
+              <i class="fas fa-plus sidebar-nav__icon"></i>
+              <span class="sidebar-nav__label" >Dodaj słówko</span>
+            </a>
+        </li>
+
+        <li class="sidebar-nav__item">
+          <a class="sidebar-nav__link" href="/notes">
+              <i class="fas fa-file-word sidebar-nav__icon"></i>
+              <span class="sidebar-nav__label">Twoje słówka</span>
+            </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <ul class="menu__list sidebar-logout__list">
+      <li class="menu__item sidebar-logout__item"><a class="menu__link" href="/users/logout">Wyloguj się</a></li>
+    </ul>
+
+
+    {{else}}
+
+    <ul class="sidebar__list">
+      <li class="sidebar__item">
+        <a class="sidebar__link" href="/users/signin">Zaloguj się </a>
+      </li>
+
+      <li class="sidebar__item">
+        <a class="sidebar__link" href="/users/signup">Zarejestruj się</a>
+      </li>
+    </ul>
+
+    {{/if}}
+
+  </div>
+
 </div>

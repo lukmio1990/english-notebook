@@ -1,1 +1,23 @@
-<h1>Wszystkie</h1>
+<div class="home all-rules-wrap">
+  <div class="all-rules-title">
+    <h1 class="all-rules-title__content"> Notatki</h1>
+  </div>
+  <div class="rules">
+
+    {{#each rules}}
+    <div class="rule">
+      <h3 class="rule__title">{{title}}</h3>
+      <div class="rule__rule">{{rule}}</div>
+      <div class="note__options">
+        <a class="note__btn-edit" href="/notes/edit/{{id}}"><i class="fas fa-edit"></i></a>
+
+        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="note__btn-delete" type="submit"><i class="fas fa-trash-alt"></i> </button>
+        </form>
+
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

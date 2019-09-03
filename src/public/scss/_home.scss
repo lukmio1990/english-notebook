@@ -3,6 +3,7 @@
 
   min-height: calc(100vh - 160px);
   background-color: $secondary-bgc;
+  z-index: -1;
 }
 
 .welcome {
