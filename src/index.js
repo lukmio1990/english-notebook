@@ -57,6 +57,7 @@ app.use(require('./routes'));
 app.use(require('./routes/users'));
 app.use(require('./routes/notes'));
 app.use(require('./routes/rules'));
+app.use(require('./routes/quiz'));
 
 //static
 app.use(express.static(path.join(__dirname, 'public')));

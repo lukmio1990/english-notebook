@@ -40,6 +40,7 @@
     }
 
     .fa-check {
+      visibility: hidden;
       font-size: 40px;
       color: green;
       @media (max-width: 980px) {
@@ -48,5 +49,13 @@
         }
       }
     }
+  }
+
+  &__btn {
+    border: 1px solid $primary-bgc;
+    background-color: $primary-bgc;
+    font-size: 22px;
+    justify-self: center;
+    margin: 15px 30px;
   }
 }
