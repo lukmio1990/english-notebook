@@ -11,6 +11,7 @@ const app = express();
 require('./database');
 require('./config/passport');
 
+app.set('port', process.env.PORT || 3000);
 //set handlebars
 app.set('views', path.join(__dirname, 'views'));
 app.engine(
@@ -26,7 +27,7 @@ app.engine(
         if (number === 0) {
           return 0;
         } else {
-          return (correct / number) * 100;
+          return Math.floor((correct / number) * 100);
         }
       }
     }
@@ -46,6 +47,15 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  // res.locals.error = req.flash('error');
+  // res.locals.user = req.user || null;
+  next();
+});
 
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
@@ -64,6 +74,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //server is listening
 
-app.listen(3000, () => {
+app.listen(app.get('port'), () => {
   console.log('Server is running');
 });

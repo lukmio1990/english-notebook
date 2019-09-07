@@ -22,26 +22,31 @@
     font-size: 18px;
     padding: 5px;
     outline: none;
-    background-color: transparent;
+    background-color: black;
     border: none;
-    border-bottom: 1px solid black;
+    border: 1px solid black;
+    border-radius: 50px;
     width: 100%;
     color: $primary-color;
-    transition: border-bottom 0.3s;
+    transition: border 0.3s;
     &:focus {
-      border-bottom: 1px solid green;
+      border: 1px solid green;
     }
   }
 
   &__solution {
     @include flex-center;
     font-size: 22px;
-    color: green;
+    &--span {
+      color: $primary-color;
+      padding-right: 10px;
+    }
   }
 
   &__translate {
     @include flex-center;
     color: $primary-color;
+    opacity: 0;
   }
 
   &__check,
@@ -50,5 +55,32 @@
     font-size: 18px;
     padding: 10px 7px;
     margin-top: 3px;
+  }
+}
+
+.fa-times-circle,
+.fa-check-circle {
+  font-size: 40px;
+  opacity: 0;
+}
+
+.fa-times-circle {
+  color: red;
+}
+
+.fa-check-circle {
+  color: green;
+}
+
+@keyframes solution {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  10% {
+    display: block;
+  }
+  100% {
+    opacity: 1;
   }
 }

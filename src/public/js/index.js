@@ -18,8 +18,6 @@ hamburger.addEventListener('click', handleClick);
 
 // NOTE CONFIG
 const btnCog = [...document.querySelectorAll('.note__cog')];
-console.log(btnCog);
-
 btnCog.forEach(item => {
   item.addEventListener('click', e => {
     const li = e.target.parentElement.parentElement;
@@ -27,26 +25,45 @@ btnCog.forEach(item => {
   });
 });
 
+//RATING NOTE
+const rating = document.querySelectorAll('.rating__content');
+const ratingIcon = document.querySelectorAll('.rating__icon');
+
+rating.forEach(item => {
+  if (item.textContent >= 50) {
+    item.previousElementSibling.className = 'fas fa-thumbs-up rating__icon';
+  } else if (item.textContent < 50) {
+    item.previousElementSibling = 'fas fa-thumbs-down rating__icon';
+  }
+});
+
 // QUIZ
 
 const quizInput = document.querySelector('.quiz__input');
-const quizSolution = document.querySelector('.quiz__solution');
+const quizSolution = document.querySelector('.quiz__solution--span');
 const quizTranslate = document.querySelector('.quiz__translate');
 const quizCheck = document.querySelector('.quiz__check');
 const quizNext = document.querySelector('.quiz__next');
+const reply = document.querySelector('.quiz__reply');
+const solutionCorrect = document.querySelector('.fa-check-circle');
+const solutionUncorrect = document.querySelector('.fa-times-circle');
 
 quizCheck.addEventListener('click', e => {
   e.preventDefault();
-  const value = quizInput.value;
+  const value = quizInput.value.toLowerCase();
 
-  if (value === quizTranslate.textContent) {
-    quizSolution.textContent = 'dobrze';
+  if (value.trim() === quizTranslate.textContent.toLowerCase()) {
+    solutionCorrect.style.animation = 'solution 1s both';
     quizSolution.style.color = 'green';
     quizInput.value = '';
-    quizInput.setAttribute('type', 'disabled');
+    quizInput.setAttribute('disabled', true);
     quizCheck.style.display = 'none';
+    reply.value = 1;
   } else {
-    quizSolution.textContent = 'źle';
+    solutionUncorrect.style.animation = 'solution 1s both';
     quizSolution.style.color = 'red';
+    quizCheck.style.display = 'none';
+    quizTranslate.style.opacity = 1;
+    reply.value = 0;
   }
 });

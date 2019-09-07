@@ -18,6 +18,7 @@ router.post(
     const newNote = new Note({ word, translate });
     newNote.user = req.user.id;
     await newNote.save();
+    req.flash('success_msg', 'Dodano pomyślnie');
     res.redirect('/notes');
   }
 );
@@ -36,6 +37,7 @@ router.get('/notes/edit/:id', isAuthenticated, async (req, res) => {
 router.put('/notes/edit-note/:id', isAuthenticated, async (req, res) => {
   const { word, translate } = req.body;
   await Note.findByIdAndUpdate(req.params.id, { word, translate });
+  req.flash('success_msg', 'Zmiany zostały zapisane');
   res.redirect('/notes');
 });
 

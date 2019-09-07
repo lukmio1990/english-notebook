@@ -1,12 +1,18 @@
 <div class="home">
   <div class="quiz">
 
-    <form class="quiz__form" action="">
+    <form class="quiz__form" action="/quiz" method="POST">
 
-      <h3 class="quiz__word" class=>{{note.word}}</h3>
-      <input name="word" class="quiz__input" type="text" placeholder="tu wpisz odpowiedź... ">
-      <p class="quiz__solution"></p>
-      <p class="quiz__translate">{{note.translate}}</p>
+      <h3 class="quiz__word" class=>{{note.translate}}</h3>
+      <input name="word" class="quiz__input" type="text" placeholder="tu wpisz odpowiedź... " autofocus>
+      <p class="quiz__solution">
+        <span class="quiz__solution--span">Ocena</span>
+        <i class="far fa-times-circle"></i>
+        <i class="far fa-check-circle"></i>
+      </p>
+      <p class="quiz__translate">{{note.word}}</p>
+      <input class="quiz__reply" type="text" name="reply" id="reply" value="" hidden>
+      <input class="quiz__id" type="text" name="id" id="reply" value="{{note._id}}" hidden>
 
       <button class="quiz__check primaryBtn">Sprawdź</button>
       <button class="quiz__next primaryBtn" type="submit">Dalej</button>
