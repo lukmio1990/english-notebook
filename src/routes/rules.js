@@ -18,6 +18,7 @@ router.post(
     const newRule = new Rule({ title, rule });
     newRule.user = req.user.id;
     await newRule.save();
+    req.flash('success_msg', 'Notatka została dodana');
     res.redirect('/rules');
   }
 );

@@ -43,6 +43,7 @@ router.put('/notes/edit-note/:id', isAuthenticated, async (req, res) => {
 
 router.delete('/notes/delete/:id', isAuthenticated, async (req, res) => {
   await Note.findByIdAndDelete(req.params.id);
+  req.flash('success_msg', 'Słówko usunięte');
   res.redirect('/notes');
 });
 

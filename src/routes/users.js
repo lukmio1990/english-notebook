@@ -18,8 +18,8 @@ router.post(
   LoginController.checkValidation,
   passport.authenticate('local', {
     successRedirect: '/notes',
-    failureRedirect: '/users/signin'
-    // failureFlash: true
+    failureRedirect: '/users/signin',
+    failureFlash: true
   })
 );
 
@@ -37,12 +37,17 @@ router.post(
     const newUser = new User({ name, email, password, confirm_password });
     newUser.password = await newUser.encryptPassword(password);
     await newUser.save();
+    req.flash(
+      'success_msg',
+      'Rejestracja zakończona powodzeniem. Możesz się teraz zalogować'
+    );
     res.redirect('/');
   }
 );
 
 router.get('/users/logout', (req, res) => {
   req.logout();
+  req.flash('success_msg', 'Wylogowano użytkownika');
   res.redirect('/');
 });
 

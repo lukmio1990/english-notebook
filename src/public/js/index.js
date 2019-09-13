@@ -43,7 +43,7 @@ const quizInput = document.querySelector('.quiz__input');
 const quizSolution = document.querySelector('.quiz__solution--span');
 const quizTranslate = document.querySelector('.quiz__translate');
 const quizCheck = document.querySelector('.quiz__check');
-const quizNext = document.querySelector('.quiz__next');
+const quizNext = document.querySelector('quiz__next primaryBtn');
 const reply = document.querySelector('.quiz__reply');
 const solutionCorrect = document.querySelector('.fa-check-circle');
 const solutionUncorrect = document.querySelector('.fa-times-circle');
@@ -57,6 +57,7 @@ quizCheck.addEventListener('click', e => {
     quizSolution.style.color = 'green';
     quizInput.value = '';
     quizInput.setAttribute('disabled', true);
+    quizInput.setAttribute('placeholder', 'kliknij dalej');
     quizCheck.style.display = 'none';
     reply.value = 1;
   } else {
@@ -67,3 +68,16 @@ quizCheck.addEventListener('click', e => {
     reply.value = 0;
   }
 });
+
+// MESSAGE
+
+// const msg = () => {
+//   const closeBtn = document.querySelector('.message__btn');
+//   const message = document.querySelector('.message');
+//   console.log(closeBtn);
+
+//   closeBtn.addEventListener('click', () => {
+//     message.style.display = 'none';
+//     console.log('click');
+//   });
+// };

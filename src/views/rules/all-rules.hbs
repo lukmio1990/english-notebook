@@ -3,6 +3,7 @@
     <h1 class="all-rules-title__content"> Notatki</h1>
   </div>
   <div class="rules">
+    {{#if rules}}
 
     {{#each rules}}
     <div class="rule">
@@ -19,5 +20,18 @@
       </div>
     </div>
     {{/each}}
+
+    {{else}}
+
+    <div class="notes-empty">
+      <h3 class="notes-empty__title">Nie masz żadnych notatek</h3>
+      <a class="notes-empty__link" href="/rules/add">Dodaj pierwszą notatkę</a>
+
+    </div>
+
+    {{/if}}
+
+
+
   </div>
 </div>

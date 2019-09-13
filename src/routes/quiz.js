@@ -19,19 +19,11 @@ router.post('/quiz', isAuthenticated, async (req, res) => {
   // console.log(rank);
 
   if (reply === '1') {
-    // console.log('dobrze');
     const number = (rank.correct += 1);
-    // console.log(rank.correct);
-
     await Note.findByIdAndUpdate(id, { correct: number });
-    // console.log(await Note.find({ _id: id }));
   } else if (reply === '0') {
-    // console.log('źle');
     const number = (rank.uncorrect += 1);
-    // console.log(rank.uncorrect);
-
     await Note.findByIdAndUpdate(id, { uncorrect: number });
-    // console.log(await Note.find({ _id: id }));
   }
 
   res.redirect('/quiz');
