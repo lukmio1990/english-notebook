@@ -5,9 +5,9 @@ const dbAdress =
 
 mongoose
   .connect(dbAdress, {
-    useCreateIndex: true,
+   
     useNewUrlParser: true,
-    useFindAndModify: false
+    
   })
   .then(db => console.log('DB is connected'))
   .catch(err => console.log(err));
