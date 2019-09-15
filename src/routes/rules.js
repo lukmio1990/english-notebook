@@ -25,7 +25,6 @@ router.post(
 
 router.get('/rules', isAuthenticated, async (req, res) => {
   const rules = await Rule.find({ user: req.user.id }).sort({ date: 'desc' });
-  console.log(rules);
 
   res.render('rules/all-rules', { rules });
 });

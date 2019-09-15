@@ -13,3 +13,11 @@
 </div>
 </div>
 {{/if}}
+
+{{#if error }}
+<div class="error-msg message">
+  <p class="error-msg__paragraph message__paragraph">{{error}}</p>
+  <button class="error-msg__btn message__btn">zamknij</button>
+
+</div>
+{{/if}}

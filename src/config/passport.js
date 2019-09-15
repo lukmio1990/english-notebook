@@ -10,14 +10,16 @@ passport.use(
     },
     async (email, password, done) => {
       const user = await User.findOne({ email: email });
+
       if (!user) {
-        return done(null, false, { message: 'User nie istnieje' });
+        return done(null, false, { message: 'Użytkownik nie istnieje' });
       } else {
         const match = await user.matchPassword(password);
+
         if (match) {
           return done(null, user);
         } else {
-          return null, false, { message: 'Niepoprawne hasło' };
+          return done(null, false, { message: 'Niepoprawne hasło' });
         }
       }
     }

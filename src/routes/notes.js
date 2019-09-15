@@ -34,12 +34,18 @@ router.get('/notes/edit/:id', isAuthenticated, async (req, res) => {
   res.render('notes/edit-note', { note });
 });
 
-router.put('/notes/edit-note/:id', isAuthenticated, async (req, res) => {
-  const { word, translate } = req.body;
-  await Note.findByIdAndUpdate(req.params.id, { word, translate });
-  req.flash('success_msg', 'Zmiany zostały zapisane');
-  res.redirect('/notes');
-});
+router.put(
+  '/notes/edit-note/:id',
+  NoteController.validate,
+  NoteController.checkValidation,
+  isAuthenticated,
+  async (req, res) => {
+    const { word, translate } = req.body;
+    await Note.findByIdAndUpdate(req.params.id, { word, translate });
+    req.flash('success_msg', 'Zmiany zostały zapisane');
+    res.redirect('/notes');
+  }
+);
 
 router.delete('/notes/delete/:id', isAuthenticated, async (req, res) => {
   await Note.findByIdAndDelete(req.params.id);

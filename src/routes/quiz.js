@@ -13,10 +13,8 @@ router.get('/quiz', isAuthenticated, async (req, res) => {
 });
 
 router.post('/quiz', isAuthenticated, async (req, res) => {
-  console.log(req.body);
   const { reply, id } = req.body;
   const rank = await Note.findById(id);
-  // console.log(rank);
 
   if (reply === '1') {
     const number = (rank.correct += 1);
