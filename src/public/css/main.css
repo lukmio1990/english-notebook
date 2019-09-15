@@ -1131,6 +1131,7 @@ a {
   padding-top: 10px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  white-space: pre-wrap;
 }
 
 .quiz {

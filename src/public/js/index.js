@@ -71,13 +71,11 @@ quizCheck.addEventListener('click', e => {
 
 // MESSAGE
 
-// const msg = () => {
-//   const closeBtn = document.querySelector('.message__btn');
-//   const message = document.querySelector('.message');
-//   console.log(closeBtn);
+const closeBtn = document.querySelector('.message__btn');
+const message = document.querySelector('.message');
+console.log(closeBtn);
 
-//   closeBtn.addEventListener('click', () => {
-//     message.style.display = 'none';
-//     console.log('click');
-//   });
-// };
+closeBtn.addEventListener('click', () => {
+  message.style.display = 'none';
+  console.log('click');
+});

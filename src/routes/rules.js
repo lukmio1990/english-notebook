@@ -25,7 +25,27 @@ router.post(
 
 router.get('/rules', isAuthenticated, async (req, res) => {
   const rules = await Rule.find({ user: req.user.id }).sort({ date: 'desc' });
+  console.log(rules);
+
   res.render('rules/all-rules', { rules });
+});
+
+router.get('/rules/edit/:id', isAuthenticated, async (req, res) => {
+  const rule = await Rule.findById(req.params.id);
+  res.render('rules/edit-rule', { rule });
+});
+
+router.put('/rules/edit-rule/:id', isAuthenticated, async (req, res) => {
+  const { title, rule } = req.body;
+  await Rule.findByIdAndUpdate(req.params.id, { title, rule });
+  req.flash('success_msg', 'Zmiany zostały zapisane');
+  res.redirect('/rules');
+});
+
+router.delete('/rules/delete/:id', isAuthenticated, async (req, res) => {
+  await Rule.findByIdAndDelete(req.params.id);
+  req.flash('success_msg', 'Notatka usunięta');
+  res.redirect('/rules');
 });
 
 module.exports = router;

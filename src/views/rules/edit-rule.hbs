@@ -1,0 +1,23 @@
+<div class="home">
+  <div class="newRule">
+    <h3 class="newRule__title">Zmień treść notatki</h3>
+
+    <form class="newRule__form" action="/rules/edit-rule/{{rule._id}}?_method=PUT " method="POST">
+      <input type="hidden" name="_method" value="PUT">
+
+      <input type="text" name="title" class="newRule__formTitle" placeholder="Tytuł notatki" value="{{rule.title}}">
+
+      {{#if errors}}
+      <p class="newRule__error">{{errors.title.msg}}</p>
+      {{/if}}
+
+      <textarea class="newRule__rule" name="rule" cols="40" rows="20"
+        placeholder="treść notatki">{{rule.rule}}</textarea>
+      {{#if errors}}
+      <p class="newRule__error">{{errors.rule.msg}}</p>
+      {{/if}}
+      <button class="newRule__submit primaryBtn" type="submit">Zatwierdź zmiany</button>
+    </form>
+
+  </div>
+</div>

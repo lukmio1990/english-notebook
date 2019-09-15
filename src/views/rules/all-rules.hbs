@@ -10,9 +10,9 @@
       <h3 class="rule__title">{{title}}</h3>
       <div class="rule__rule">{{rule}}</div>
       <div class="note__options">
-        <a class="note__btn-edit" href="/notes/edit/{{id}}"><i class="fas fa-edit"></i></a>
+        <a class="note__btn-edit" href="/rules/edit/{{id}}"><i class="fas fa-edit"></i></a>
 
-        <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+        <form action="/rules/delete/{{_id}}?_method=DELETE" method="POST">
           <input type="hidden" name="_method" value="DELETE">
           <button class="note__btn-delete" type="submit"><i class="fas fa-trash-alt"></i> </button>
         </form>
