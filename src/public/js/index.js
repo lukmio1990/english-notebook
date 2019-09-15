@@ -1,3 +1,16 @@
+// MESSAGE
+
+if (document.querySelector('.message')) {
+  const closeBtn = document.querySelector('.message__btn');
+  const message = document.querySelector('.message');
+  console.log(closeBtn);
+
+  closeBtn.addEventListener('click', () => {
+    message.style.display = 'none';
+    console.log('click');
+  });
+}
+
 //GSAP
 const iconsCheck = document.querySelectorAll('.fa-check--home');
 iconsCheck.forEach(item => TweenMax.set(item, { visibility: 'visible' }));
@@ -26,16 +39,19 @@ btnCog.forEach(item => {
 });
 
 //RATING NOTE
-const rating = document.querySelectorAll('.rating__content');
-const ratingIcon = document.querySelectorAll('.rating__icon');
 
-rating.forEach(item => {
-  if (item.textContent >= 50) {
-    item.previousElementSibling.className = 'fas fa-thumbs-up rating__icon';
-  } else if (item.textContent < 50) {
-    item.previousElementSibling = 'fas fa-thumbs-down rating__icon';
-  }
-});
+if (document.querySelectorAll('.rating__content')) {
+  const rating = document.querySelectorAll('.rating__content');
+  const ratingIcon = document.querySelectorAll('.rating__icon');
+
+  rating.forEach(item => {
+    if (item.textContent >= 50) {
+      item.previousElementSibling.className = 'fas fa-thumbs-up rating__icon';
+    } else if (item.textContent < 50) {
+      item.previousElementSibling = 'fas fa-thumbs-down rating__icon';
+    }
+  });
+}
 
 // QUIZ
 
@@ -67,15 +83,4 @@ quizCheck.addEventListener('click', e => {
     quizTranslate.style.opacity = 1;
     reply.value = 0;
   }
-});
-
-// MESSAGE
-
-const closeBtn = document.querySelector('.message__btn');
-const message = document.querySelector('.message');
-console.log(closeBtn);
-
-closeBtn.addEventListener('click', () => {
-  message.style.display = 'none';
-  console.log('click');
 });

@@ -375,12 +375,22 @@ a {
 }
 
 .sidebar-logout__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
   padding: 0;
   padding-top: 10px;
 }
 
 .sidebar-logout__item {
-  margin: 0 auto;
+  margin-right: 0;
 }
 
 .home {
@@ -462,6 +472,7 @@ a {
   -ms-grid-column-align: center;
       justify-self: center;
   margin: 15px 30px;
+  width: 150px;
 }
 
 @media (max-width: 1024px) {
@@ -760,6 +771,12 @@ a {
   position: absolute;
   top: 105px;
   right: 50px;
+}
+
+@media (max-width: 400px) {
+  .notes-quiz__btn {
+    right: 10px;
+  }
 }
 
 .notes-quiz__link {

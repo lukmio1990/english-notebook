@@ -14,11 +14,18 @@
   grid-gap: 10px 10px;
   justify-content: center;
   padding: 20px;
+
   &-quiz__btn {
     position: absolute;
     top: 105px;
     right: 50px;
+    @media (max-width: 400px) {
+      & {
+        right: 10px;
+      }
+    }
   }
+
   &-quiz__link {
     background-color: white;
     border-radius: 100px;
