@@ -170,3 +170,40 @@
     }
   }
 }
+
+.search {
+  @include flex-center;
+  // background-color: red;
+  margin: 5px auto;
+  border: 2px solid $primary-bgc;
+  border-radius: 100px;
+  width: 300px;
+  padding: 0 5px;
+
+  &__input {
+    font-size: 18px;
+    padding: 6px 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+
+    &::placeholder {
+      color: white;
+      font-weight: normal;
+    }
+  }
+
+  &__icon {
+    font-size: 24px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: grid;
+}

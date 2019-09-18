@@ -7,7 +7,6 @@ if (document.querySelector('.message')) {
 
   closeBtn.addEventListener('click', () => {
     message.style.display = 'none';
-    console.log('click');
   });
 }
 
@@ -64,23 +63,58 @@ const reply = document.querySelector('.quiz__reply');
 const solutionCorrect = document.querySelector('.fa-check-circle');
 const solutionUncorrect = document.querySelector('.fa-times-circle');
 
-quizCheck.addEventListener('click', e => {
-  e.preventDefault();
-  const value = quizInput.value.toLowerCase();
+if (quizCheck) {
+  quizCheck.addEventListener('click', e => {
+    e.preventDefault();
+    const value = quizInput.value.toLowerCase();
 
-  if (value.trim() === quizTranslate.textContent.toLowerCase()) {
-    solutionCorrect.style.animation = 'solution 1s both';
-    quizSolution.style.color = 'green';
-    quizInput.value = '';
-    quizInput.setAttribute('disabled', true);
-    quizInput.setAttribute('placeholder', 'kliknij dalej');
-    quizCheck.style.display = 'none';
-    reply.value = 1;
-  } else {
-    solutionUncorrect.style.animation = 'solution 1s both';
-    quizSolution.style.color = 'red';
-    quizCheck.style.display = 'none';
-    quizTranslate.style.opacity = 1;
-    reply.value = 0;
-  }
-});
+    if (value.trim() === quizTranslate.textContent.toLowerCase()) {
+      solutionCorrect.style.animation = 'solution 1s both';
+      quizSolution.style.color = 'green';
+      quizInput.value = '';
+      quizInput.setAttribute('disabled', true);
+      quizInput.setAttribute('placeholder', 'kliknij dalej');
+      quizCheck.style.display = 'none';
+      reply.value = 1;
+    } else {
+      solutionUncorrect.style.animation = 'solution 1s both';
+      quizSolution.style.color = 'red';
+      quizCheck.style.display = 'none';
+      quizTranslate.style.opacity = 1;
+      reply.value = 0;
+    }
+  });
+}
+
+//SEARCH
+
+const allItems = [...document.querySelectorAll('.note')];
+const inputWord = document.querySelector('.search__input');
+
+if (inputWord) {
+  inputWord.addEventListener('input', e => {
+    let visibleCards = allItems.filter(card =>
+      card.childNodes[1].textContent.includes(e.target.value)
+    );
+
+    let hiddenCards = allItems.filter(
+      card => !card.childNodes[1].textContent.includes(e.target.value)
+    );
+    show(visibleCards);
+    hidden(hiddenCards);
+  });
+}
+
+const show = visibleCards => {
+  visibleCards.forEach(card => {
+    card.classList.remove('hidden');
+    card.classList.add('active');
+  });
+};
+
+const hidden = hiddenCards => {
+  hiddenCards.forEach(card => {
+    card.classList.add('hidden');
+    card.classList.remove('active');
+  });
+};
