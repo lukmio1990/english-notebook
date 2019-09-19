@@ -193,10 +193,14 @@
       color: white;
       font-weight: normal;
     }
+    &:focus + .search__icon {
+      color: white;
+    }
   }
 
   &__icon {
     font-size: 24px;
+    transition: color 0.3s;
   }
 }
 
@@ -207,3 +211,7 @@
 .visible {
   display: grid;
 }
+
+// .search__input:focus + .search__icon {
+//   color: white;
+// }

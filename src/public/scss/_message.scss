@@ -32,3 +32,12 @@
 .error-msg {
   background-color: #e81d0e;
 }
+
+@keyframes displayMessage {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

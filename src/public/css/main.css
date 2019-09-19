@@ -1028,8 +1028,14 @@ a {
   font-weight: normal;
 }
 
+.search__input:focus + .search__icon {
+  color: white;
+}
+
 .search__icon {
   font-size: 24px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 .hidden {
@@ -1396,6 +1402,24 @@ a {
 
 .error-msg {
   background-color: #e81d0e;
+}
+
+@-webkit-keyframes displayMessage {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes displayMessage {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 body {

@@ -5,9 +5,19 @@ if (document.querySelector('.message')) {
   const message = document.querySelector('.message');
   console.log(closeBtn);
 
-  closeBtn.addEventListener('click', () => {
-    message.style.display = 'none';
-  });
+  // message.style.animation = 'displayMessage 1s 2s ';
+  let timeoutMessage = window.setTimeout(
+    () => (message.style.display = 'none'),
+    2200
+  );
+
+  const closeMessage = () => {
+    clearTimeout(timeoutMessage);
+    message.style.animation = 'displayMessage 1s ';
+    window.setTimeout(() => (message.style.display = 'none'), 1000);
+  };
+
+  closeBtn.addEventListener('click', closeMessage);
 }
 
 //GSAP
@@ -94,11 +104,16 @@ const inputWord = document.querySelector('.search__input');
 if (inputWord) {
   inputWord.addEventListener('input', e => {
     let visibleCards = allItems.filter(card =>
-      card.childNodes[1].textContent.includes(e.target.value)
+      card.childNodes[1].textContent
+        .toLowerCase()
+        .includes(e.target.value.toLowerCase())
     );
 
     let hiddenCards = allItems.filter(
-      card => !card.childNodes[1].textContent.includes(e.target.value)
+      card =>
+        !card.childNodes[1].textContent
+          .toLowerCase()
+          .includes(e.target.value.toLowerCase())
     );
     show(visibleCards);
     hidden(hiddenCards);
