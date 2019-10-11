@@ -30,13 +30,14 @@
     color: $primary-color;
     transition: border 0.3s;
     &:focus {
-      border: 1px solid green;
+      border: 1px solid $green-color;
     }
   }
 
   &__solution {
     @include flex-center;
     font-size: 22px;
+    position: relative;
     &--span {
       color: $primary-color;
       padding-right: 10px;
@@ -60,16 +61,20 @@
 
 .fa-times-circle,
 .fa-check-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 40px;
   opacity: 0;
 }
 
 .fa-times-circle {
-  color: red;
+  color: $red-color;
 }
 
 .fa-check-circle {
-  color: green;
+  color: $green-color;
 }
 
 @keyframes solution {

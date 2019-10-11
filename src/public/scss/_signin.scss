@@ -11,6 +11,12 @@
     }
   }
 
+  @media (max-width: 330px) {
+    & {
+      width: 97vw;
+    }
+  }
+
   &__title {
     text-align: center;
     color: $primary-color;
@@ -44,7 +50,7 @@
     &:focus {
       outline: none;
       border: none;
-      border-bottom: 1px solid green;
+      border-bottom: 1px solid $green-color;
     }
   }
 

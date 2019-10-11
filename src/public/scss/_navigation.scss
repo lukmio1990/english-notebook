@@ -19,6 +19,12 @@
   height: 60px;
   padding-left: 50px;
 
+  @media (max-width: 330px) {
+    & {
+      padding-left: 10px;
+    }
+  }
+
   &__link {
     @include flex-center;
     // justify-content: flex-start;
@@ -63,8 +69,8 @@
     padding: 0 10px 0 20px;
   }
 
-  &__link {
-  }
+  // &__link {
+  // }
 }
 
 .nav {
@@ -134,9 +140,9 @@
   transition: transform 0.3s 0.1s ease-in-out;
 }
 
-.hamburger--active {
-  // transform: translatex(250px);
-}
+// .hamburger--active {
+//   // transform: translatex(250px);
+// }
 
 .hamburger__box {
   width: 35px;
@@ -188,10 +194,9 @@
   top: 0;
   left: 0;
   min-width: 340px;
-  // height: 200px;
   background-color: $primary-bgc;
   z-index: 999;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
   transition: transform 0.5s;
   transform: translateX(-340px);
 
@@ -199,6 +204,12 @@
     justify-content: center;
     // margin-top: 80px;
     padding: 0;
+
+    @media (max-width: 330px) {
+      & {
+        justify-content: flex-start;
+      }
+    }
   }
 
   &__link {

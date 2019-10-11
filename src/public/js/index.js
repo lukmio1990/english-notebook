@@ -65,7 +65,7 @@ if (document.querySelectorAll('.rating__content')) {
 // QUIZ
 
 const quizInput = document.querySelector('.quiz__input');
-const quizSolution = document.querySelector('.quiz__solution--span');
+// const quizSolution = document.querySelector('.quiz__solution--span');
 const quizTranslate = document.querySelector('.quiz__translate');
 const quizCheck = document.querySelector('.quiz__check');
 const quizNext = document.querySelector('quiz__next primaryBtn');
@@ -80,7 +80,7 @@ if (quizCheck) {
 
     if (value.trim() === quizTranslate.textContent.toLowerCase()) {
       solutionCorrect.style.animation = 'solution 1s both';
-      quizSolution.style.color = 'green';
+      // quizSolution.style.color = 'green';
       quizInput.value = '';
       quizInput.setAttribute('disabled', true);
       quizInput.setAttribute('placeholder', 'kliknij dalej');
@@ -88,10 +88,12 @@ if (quizCheck) {
       reply.value = 1;
     } else {
       solutionUncorrect.style.animation = 'solution 1s both';
-      quizSolution.style.color = 'red';
+      // quizSolution.style.color = 'red';
       quizCheck.style.display = 'none';
       quizTranslate.style.opacity = 1;
       reply.value = 0;
+      quizInput.setAttribute('disabled', true);
+      quizInput.setAttribute('placeholder', 'kliknij dalej');
     }
   });
 }

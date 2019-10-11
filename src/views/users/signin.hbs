@@ -13,7 +13,7 @@
     {{!-- FORM --}}
     <form class="signin__form " action="/users/signin" method="POST">
 
-      <input class="signin__email" type="text" name="email" placeholder="Email" value="{{validated.email}}">
+      <input autofocus class="signin__email" type="text" name="email" placeholder="Email" value="{{validated.email}}">
       {{#if errors}}
       <p class="signin__error">{{errors.email.msg}}</p>
       {{/if}}

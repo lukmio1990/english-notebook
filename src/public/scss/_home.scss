@@ -42,7 +42,7 @@
     .fa-check {
       visibility: hidden;
       font-size: 40px;
-      color: green;
+      color: $green-color;
       @media (max-width: 980px) {
         & {
           font-size: 20px;
