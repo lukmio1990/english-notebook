@@ -57,24 +57,23 @@
     padding: 10px 7px;
     margin-top: 3px;
   }
-}
 
-.fa-times-circle,
-.fa-check-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 40px;
-  opacity: 0;
-}
+  &__correct,
+  &__uncorrect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    opacity: 0;
+  }
+  &__correct {
+    color: $green-color;
+  }
 
-.fa-times-circle {
-  color: $red-color;
-}
-
-.fa-check-circle {
-  color: $green-color;
+  &__uncorrect {
+    color: $red-color;
+  }
 }
 
 @keyframes solution {

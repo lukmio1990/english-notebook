@@ -8,6 +8,8 @@
     <input type="text" name="search_-word" id="" class="search__input" placeholder="Szukaj..." spellcheck="false">
     <div class="search__icon"><i class="fas fa-search"></i></div>
   </div>
+  <div class="counter"></div>
+
   <div class="notes">
     {{#each notes}}
 
@@ -34,6 +36,22 @@
 
         </div>
         <button class="note__cog"><i class="fas fa-cog"></i></button>
+
+
+      </div>
+      <div class="note__statistics ">
+        <p class="note__totalAnswers">
+          <span><i class=" note__total fas fa-globe"></i></span>
+          {{total correct uncorrect}}
+        </p>
+        <p class="note__correctAnswers">
+          <span><i class=" note__correct fas fa-check-circle"></i></span>
+          {{correct}}
+        </p>
+        <p class="note__incorrectAnswers">
+          <span><i class=" note__uncorrect fas fa-times-circle"></i></span>
+          {{uncorrect}}
+        </p>
       </div>
     </div>
 

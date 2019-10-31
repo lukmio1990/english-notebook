@@ -102,6 +102,11 @@ if (quizCheck) {
 
 const allItems = [...document.querySelectorAll('.note')];
 const inputWord = document.querySelector('.search__input');
+const counter = document.querySelector('.counter');
+
+if (counter && allItems.length > 0) {
+  counter.textContent = allItems.length;
+}
 
 if (inputWord) {
   inputWord.addEventListener('input', e => {

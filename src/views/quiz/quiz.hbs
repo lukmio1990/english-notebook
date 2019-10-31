@@ -6,9 +6,9 @@
       <h3 class="quiz__word" class=>{{note.translate}}</h3>
       <input name="word" class="quiz__input" type="text" placeholder="tu wpisz odpowiedź... " autofocus>
       <p class="quiz__solution">
-        {{!-- <span class="quiz__solution--span">Ocena</span> --}}
-        <i class="far fa-times-circle"></i>
-        <i class="far fa-check-circle"></i>
+
+        <i class=" quiz__uncorrect far fa-times-circle"></i>
+        <i class=" quiz__correct far fa-check-circle"></i>
       </p>
       <p class="quiz__translate">{{note.word}}</p>
       <input class="quiz__reply" type="text" name="reply" id="reply" value="" hidden>

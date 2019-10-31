@@ -924,8 +924,8 @@ a {
 
 .note__options .rating {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 5px;
+  left: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -941,6 +941,29 @@ a {
 
 .note__options .rating .fa-thumbs-down {
   color: red;
+}
+
+.note__statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-display: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  border-top: 1px solid black;
+}
+
+.note__correct, .note__uncorrect, .note__total {
+  position: static;
+}
+
+.note__correctAnswers {
+  margin: 0 10px;
 }
 
 .options__btn {
@@ -1035,27 +1058,27 @@ a {
 }
 
 .search__input::-webkit-input-placeholder {
-  color: white;
+  color: #f2f2f2;
   font-weight: normal;
 }
 
 .search__input:-ms-input-placeholder {
-  color: white;
+  color: #f2f2f2;
   font-weight: normal;
 }
 
 .search__input::-ms-input-placeholder {
-  color: white;
+  color: #f2f2f2;
   font-weight: normal;
 }
 
 .search__input::placeholder {
-  color: white;
+  color: #f2f2f2;
   font-weight: normal;
 }
 
 .search__input:focus + .search__icon {
-  color: white;
+  color: #f2f2f2;
 }
 
 .search__icon {
@@ -1071,6 +1094,12 @@ a {
 .visible {
   display: -ms-grid;
   display: grid;
+}
+
+.counter {
+  text-align: center;
+  font-size: 35px;
+  color: #f2f2f2;
 }
 
 .newNote {
@@ -1372,8 +1401,7 @@ a {
   margin-top: 3px;
 }
 
-.fa-times-circle,
-.fa-check-circle {
+.quiz__correct, .quiz__uncorrect {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1383,12 +1411,12 @@ a {
   opacity: 0;
 }
 
-.fa-times-circle {
-  color: #ff2a1e;
+.quiz__correct {
+  color: #4bff0f;
 }
 
-.fa-check-circle {
-  color: #4bff0f;
+.quiz__uncorrect {
+  color: #ff2a1e;
 }
 
 @-webkit-keyframes solution {

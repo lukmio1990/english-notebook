@@ -29,6 +29,10 @@ app.engine(
         } else {
           return Math.floor((correct / number) * 100);
         }
+      },
+      total: function(correct, uncorrect) {
+        const number = correct + uncorrect;
+        return number;
       }
     }
   })
