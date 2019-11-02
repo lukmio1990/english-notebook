@@ -26,6 +26,17 @@
     }
   }
 
+  &-exercise__btn {
+    position: absolute;
+    top: 105px;
+    left: 50px;
+    @media (max-width: 400px) {
+      & {
+        left: 10px;
+      }
+    }
+  }
+
   &-quiz__link {
     background-color: white;
     border-radius: 100px;

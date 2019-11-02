@@ -805,6 +805,18 @@ a {
   }
 }
 
+.notes-exercise__btn {
+  position: absolute;
+  top: 105px;
+  left: 50px;
+}
+
+@media (max-width: 400px) {
+  .notes-exercise__btn {
+    left: 10px;
+  }
+}
+
 .notes-quiz__link {
   background-color: white;
   border-radius: 100px;
@@ -1523,6 +1535,94 @@ a {
   to {
     opacity: 0;
   }
+}
+
+.excercises-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.exercises {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.exercises__title {
+  padding: 10px;
+  font-size: 35px;
+}
+
+.exercises__content {
+  padding: 20px 30px;
+  border: 3px solid #15202b;
+  margin-bottom: 25px;
+}
+
+.exercises__solution {
+  padding: 5px 0 15px 0;
+  font-size: 19px;
+}
+
+.exercise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.exercise__solution {
+  display: none;
+}
+
+.exercise__input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #f2f2f2;
+  background-color: transparent;
+  font-size: 18px;
+  padding: 0 0 0 10px;
+  -webkit-transition: border-bottom 0.5s;
+  transition: border-bottom 0.5s;
+}
+
+.exercise__input:focus {
+  border-bottom: 1px solid #4bff0f;
+}
+
+.exercise__input:focus ~ .exercise__word {
+  color: #f2f2f2;
+}
+
+.exercise__word {
+  margin-left: 15px;
+  font-size: 20px;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.exercise__btn {
+  background-color: #15202b;
+  margin: 50px auto 0 auto;
+  font-size: 21px;
 }
 
 body {

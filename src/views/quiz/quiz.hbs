@@ -4,7 +4,8 @@
     <form class="quiz__form" action="/quiz" method="POST">
 
       <h3 class="quiz__word" class=>{{note.translate}}</h3>
-      <input name="word" class="quiz__input" type="text" placeholder="tu wpisz odpowiedź... " autofocus>
+      <input spellcheck="false" name="word" class="quiz__input" type="text" placeholder="tu wpisz odpowiedź... "
+        autofocus>
       <p class="quiz__solution">
 
         <i class=" quiz__uncorrect far fa-times-circle"></i>

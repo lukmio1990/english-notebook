@@ -140,3 +140,59 @@ const hidden = hiddenCards => {
     card.classList.remove('active');
   });
 };
+
+// EXERCISES
+
+//button
+const exerciseBtn = document.querySelector('.exercise__btn');
+//wordENG
+const elementsWord = [...document.querySelectorAll('.exercise__solution')];
+//wordPL
+const elementsTranslate = [...document.querySelectorAll('.exercise__word')];
+//wordInput
+const exerciseAnswer = [...document.querySelectorAll('.exercise__input')];
+//wynik
+const exerciseSolution = document.querySelector('.exercises__solution-span');
+
+let words = elementsWord.length;
+let goodAnswer = 0;
+
+//sprawdzanie odpowiedzi
+const checkExercise = () => {
+  exerciseAnswer.forEach((word, index) => {
+    if (
+      word.value.toLowerCase().trim() ===
+      elementsWord[index].textContent.toLowerCase().trim()
+    ) {
+      elementsTranslate[index].style.color = '#4bff0f';
+      goodAnswer++;
+    } else {
+      elementsTranslate[index].style.color = '#ff2a1e';
+    }
+  });
+};
+
+scoreExercise = () => {
+  exerciseSolution.textContent = `${goodAnswer}/${words}`;
+};
+
+//reset ćwiczenia
+const resetExercise = () => {
+  exerciseAnswer.forEach(item => (item.value = ''));
+  exerciseSolution.textContent = '0/0';
+  exerciseBtn.textContent = 'Sprawdź';
+  elementsTranslate.forEach(item => (item.style.color = 'black'));
+};
+
+//main function
+const solutionExercise = () => {
+  if (exerciseBtn.textContent === 'Sprawdź') {
+    exerciseBtn.textContent = 'Reset';
+    checkExercise();
+    scoreExercise();
+  } else {
+    resetExercise();
+  }
+};
+
+exerciseBtn.addEventListener('click', solutionExercise);

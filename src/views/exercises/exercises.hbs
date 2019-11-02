@@ -1,0 +1,33 @@
+<div class="home excercises-wrap">
+  <div class="exercises">
+    <h1 class="exercises__title">Ćwiczenia</h1>
+    <div class="exercises__content">
+
+      <div class="exercises__solution">
+        <p class="exercises__solution-paragraph">
+          Wynik
+          <span class="exercises__solution-span">
+            0/0
+          </span>
+        </p>
+
+      </div>
+
+
+      {{#each notes}}
+
+      <div class="exercises__item exercise">
+        <p class="exercise__solution">{{word}}</p>
+        <input spellcheck="false" type="text" name="" id="" class="exercise__input">
+        <p class="exercise__word">{{translate}}</p>
+
+      </div>
+
+      {{/each}}
+      <button class="primaryBtn exercise__btn" type="submit">Sprawdź</button>
+
+    </div>
+  </div>
+
+
+</div>

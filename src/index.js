@@ -73,6 +73,7 @@ app.use(require('./routes/notes'));
 app.use(require('./routes/rules'));
 app.use(require('./routes/quiz'));
 app.use(require('./routes/instruction'));
+app.use(require('./routes/exercises'));
 
 //static
 app.use(express.static(path.join(__dirname, 'public')));
